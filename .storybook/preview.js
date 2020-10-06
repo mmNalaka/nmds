@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { defaultTheme } from '../src/theme'
+import { defaultTheme, GlobalStyles } from '../src/theme'
 
 // https://storybook.js.org/docs/react/writing-stories/parameters#global-parameters
 export const parameters = {
@@ -11,6 +11,7 @@ export const parameters = {
 const withThemeProvider = (Story, context) => {
   return (
     <ThemeProvider theme={defaultTheme}>
+      <GlobalStyles />
       <Story {...context} />
     </ThemeProvider>
   )

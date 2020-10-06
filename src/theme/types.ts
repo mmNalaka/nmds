@@ -1,27 +1,22 @@
-export type ThemeUnit = string | number
+export type ThemeUnit = number | string
 
 enum BreakpointsEnum {
+  xs = 'xs',
   sm = 'sm',
   md = 'md',
   lg = 'lg',
   xl = 'xl',
+  xxl = 'xxl',
 }
 
+export type BreakpointKeys = keyof typeof BreakpointsEnum
 export type Responsive = {
-  [key in Breakpoints]: ThemeUnit
+  [key in BreakpointsEnum]?: ThemeUnit
 }
-export type Breakpoints = keyof typeof BreakpointsEnum
 export interface ThemeObject {
-  media: Responsive
-  grid: {
-    columns: number
-    gutter: {
-      default: ThemeUnit
-      responsive: Responsive
-    }
-  }
-  fontFamily: {
-    display: string
-    body: string
-  }
+  gridSize: number
+  gridGutter: Responsive
+
+  containerMaxWidth: ThemeUnit
+  containerPadding: Responsive
 }

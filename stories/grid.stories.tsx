@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row } from '../src/components/grid/row'
-import { Col } from '../src/components/grid/col';
+import { Col } from '../src/components/grid/col'
+import { Container } from '../src/components/grid/container'
 
 export default {
   title: 'Components/Row',
@@ -8,8 +9,11 @@ export default {
 }
 
 export const Primary = () => (
-  <Row>
-    <Col col={{sm: 6}}>Column 1</Col>
-    <Col col={{sm: 6}}>Column 1</Col>
-  </Row>
+  <Container>
+    <Row align="end" style={{backgroundColor: "teal"}}>
+      <Col col={{ xs: 3, sm: 4 }}>Column 1</Col>
+      <Col col={{ xs: 6, sm: 4 }}>Column 2</Col>
+      <Col col={{ xs: 6, sm: 4, lg: 12 }}>Column 3</Col>
+    </Row>
+  </Container>
 )

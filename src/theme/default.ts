@@ -1,29 +1,19 @@
 import { ThemeObject } from './types'
-
-export const BREAKPOINTS = {
-  sm: 420,
-  md: 720,
-  lg: 1024,
-  xl: 1440,
-}
+import { toRem } from '../utils/theme'
 
 // All values must be px values. Which will be converted to rem during the compilation
 export const defaultTheme: ThemeObject = {
-  media: BREAKPOINTS,
-  grid: {
-    gutter: {
-      default: '1rem',
-      responsive: {
-        sm: 16,
-        md: 16,
-        lg: 16,
-        xl: 16,
-      },
-    },
-    columns: 12,
+  gridSize: 12,
+  gridGutter: {
+    xs: toRem(14),
+    md: toRem(16),
   },
-  fontFamily: {
-    body: 'Helvetic',
-    display: 'Helvetic',
-  },
+
+  containerMaxWidth: toRem(1760),
+  containerPadding: {
+    xs: toRem(16),
+    md: toRem(24),
+    lg: toRem(30),
+    xl: toRem(80),
+  }
 }

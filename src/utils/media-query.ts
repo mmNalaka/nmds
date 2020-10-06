@@ -1,49 +1,41 @@
-import { css } from 'styled-components'
-import { Breakpoints, ThemeObject } from '../theme/types'
+// import { css } from 'styled-components'
+// import { Breakpoints, Responsive } from '../theme/types'
 
-const generateMediaQuery = ({
-  breakpointMin,
-  breakpointsMax,
-}: {
-  breakpointMin?: Breakpoints
-  breakpointsMax?: Breakpoints
-}) => (theme: ThemeObject, styles: any) => {
-  if (breakpointMin && breakpointsMax) {
-    return `
-    @media (min-width: ${
-      theme.media[breakpointMin]
-    }px) and (max-width: ${Number(theme.media[breakpointsMax]) - 1}px){
-      ${css(styles)}
-    }
-  `
-  }
+// const gridBreakpoints: Responsive = {
+//   xs: 0,
+//   sm: 420,
+//   md: 768,
+//   lg: 1024,
+//   xl: 1440,
+// }
 
-  if (breakpointMin) {
-    return `
-    @media (min-width: ${theme.media[breakpointMin]}px) {
-      ${css(styles)}
-    }
-  `
-  }
+// const generateMedia = {
+//   up: (breakpoint: Breakpoints) => (
+//     content: any,
+//   ) => `@media only screen and (min-width: ${gridBreakpoints[breakpoint]}px) {
+//     ${css(content)}
+//   }`,
 
-  if (breakpointsMax) {
-    return `
-    @media (max-width: ${theme.media[breakpointsMax]}px) {
-      ${css(styles)}
-    }
-  `
-  }
+//   only: (breakpointMin: Breakpoints, breakpointsMax: Breakpoints) => (
+//     content: any,
+//   ) => `
+//   @media (min-width: ${
+//     gridBreakpoints[breakpointMin]
+//   }px) and (max-width: ${Number(gridBreakpoints[breakpointsMax]) - 1}px){
+//     ${css(content)}
+//   }
+// `,
+// }
 
-  return
-}
+// export const media = {
+//   xsUp: generateMedia.up('xs'),
+//   smUp: generateMedia.up('sm'),
+//   mdUp: generateMedia.up('md'),
+//   lgUp: generateMedia.up('lg'),
+//   xlUp: generateMedia.up('xl'),
 
-export const media = {
-  smUp: generateMediaQuery({ breakpointMin: 'sm' }),
-  mdUp: generateMediaQuery({ breakpointMin: 'md' }),
-  lgUp: generateMediaQuery({ breakpointMin: 'lg' }),
-  xlUp: generateMediaQuery({ breakpointMin: 'xl' }),
-
-  smOnly: generateMediaQuery({ breakpointMin: 'sm', breakpointsMax: 'md' }),
-  mdOnly: generateMediaQuery({ breakpointMin: 'md', breakpointsMax: 'lg' }),
-  lgOnly: generateMediaQuery({ breakpointMin: 'lg', breakpointsMax: 'xl' }),
-}
+//   xsOnly: generateMedia.only('xs', 'md'),
+//   smOnly: generateMedia.only('sm', 'md'),
+//   mdOnly: generateMedia.only('md', 'lg'),
+//   lgOnly: generateMedia.only('lg', 'xl'),
+// }
