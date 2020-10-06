@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { Component } from 'react'
 import { Responsive } from '../../theme/types'
-import { generateResponsiveGridWidths, generateResponsiveStyles } from '../../responsive'
+import { generateResponsiveGridWidths } from '../../responsive'
 
 interface ColProps {
   col: Responsive

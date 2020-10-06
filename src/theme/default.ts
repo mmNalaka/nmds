@@ -15,5 +15,5 @@ export const defaultTheme: ThemeObject = {
     md: toRem(24),
     lg: toRem(30),
     xl: toRem(80),
-  }
+  },
 }
